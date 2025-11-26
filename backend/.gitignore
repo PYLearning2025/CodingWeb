@@ -1,0 +1,81 @@
+###############################
+# Python / FastAPI .gitignore #
+###############################
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Logs & runtime
+*.log
+logs/
+tmp/
+run/
+
+# Testing / coverage
+.pytest_cache/
+coverage.xml
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+pytestdebug.log
+
+# Type checking / linters / tooling caches
+.mypy_cache/
+.pyre/
+.pytype/
+.ruff_cache/
+.cache/
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Databases / local storage
+*.db
+*.sqlite3
+instance/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# FastAPI / Uvicorn specific
+uvicorn.log
+gunicorn.log
+
+
