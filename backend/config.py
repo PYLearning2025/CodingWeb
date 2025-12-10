@@ -1,5 +1,6 @@
 import sys
 import os
+import secrets
 
 class Singleton(type):
     _instances = {}
@@ -15,10 +16,10 @@ class Config(metaclass=Singleton):
 
     def load_environment_variables(self):
         self.MONGODB_URL = os.getenv("MONGODB_URL")
-        # self.PASETO_SECRET_KEY = os.getenv("PASETO_SECRET_KEY")
+        self.PASETO_SECRET_KEY = secrets.token_hex(32)
 
     def check_required_variables(self):
-        required_variables = ["MONGODB_URL"] #, "PASETO_SECRET_KEY"]
+        required_variables = ["MONGODB_URL", "PASETO_SECRET_KEY"]
 
         missing_variables = [var for var in required_variables if not getattr(self, var)]
 

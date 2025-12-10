@@ -23,7 +23,7 @@ class UserUpdate(UserBase):
     pass
 
 class UserLogin(BaseModel):
-    email: EmailStr
+    name: str
     password: str
 
 class LoginResponse(BaseModel):

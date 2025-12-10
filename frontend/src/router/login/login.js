@@ -4,7 +4,7 @@ import './login.css';
 
 function Login() {
     const [formData, setFormData] = useState({
-        username: '',
+        name: '',
         password: ''
     });
     const [error, setError] = useState('');
@@ -23,7 +23,7 @@ function Login() {
         e.preventDefault();
         setError('');
 
-        if (!formData.username || !formData.password) {
+        if (!formData.name || !formData.password) {
             setError('請輸入帳號與密碼');
             return;
         }
@@ -36,7 +36,8 @@ function Login() {
             
             console.log('登入成功:', response);
             alert('登入成功！');
-            // TODO: 處理 token 儲存與轉址
+            
+            window.location.href = '/';
             
         } catch (err) {
             console.error('登入失敗:', err);
@@ -58,13 +59,13 @@ function Login() {
                             
                             <form onSubmit={handleSubmit}>
                                 <div className="mb-3 text-start">
-                                    <label htmlFor="username" className="form-label">帳號</label>
+                                    <label htmlFor="name" className="form-label">帳號</label>
                                     <input
                                         type="text"
                                         className="form-control"
-                                        id="username"
-                                        name="username"
-                                        value={formData.username}
+                                        id="name"
+                                        name="name"
+                                        value={formData.name}
                                         onChange={handleChange}
                                         placeholder="請輸入帳號"
                                         disabled={loading}
